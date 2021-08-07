@@ -1,9 +1,10 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {Inject} from "@angular/core";
 import {TokenService} from "../../Service/token/token.service";
 import {AlertasService} from "../../Service/alertas/alertas.service";
 import {AutenticacionService} from "../../Service/autenticacion/autenticacion.service";
 import { PLATFORM_ID} from "@angular/core";
-import { isPlatformBrowser, isPlatformServer} from "@angular/common";
+import { isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-footer',
@@ -15,7 +16,7 @@ export class FooterComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: object,
               private tokenService: TokenService,
               private alerta: AlertasService,
-              private authService: AutenticacionService,) { }
+              private authService: AutenticacionService) { };
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -23,7 +24,7 @@ export class FooterComponent implements OnInit {
         this.loggedIn = true;
       }
     }
-  }
+  };
 
   suscribe(){
     if (isPlatformBrowser(this.platformId)) {

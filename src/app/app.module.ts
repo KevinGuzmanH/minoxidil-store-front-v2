@@ -21,6 +21,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
+import { PruComponent } from './component/pru/pru.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {
     InicioSesionComponent,
     NavbarComponent,
     RegisterComponent,
-    ShopComponent
+    ShopComponent,
+    PruComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
