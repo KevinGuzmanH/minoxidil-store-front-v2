@@ -1,0 +1,61 @@
+
+.login{
+  margin-top: 8px;
+}
+#formContraseña,#formCorreo{
+  padding: 10px;
+}
+.comprar{
+  background-color: rgb(13, 110, 253);
+}
+@media only screen and (max-width: 500px) {
+  .fifth>a{
+    text-decoration: none;
+    color: black;
+    text-align: right;
+    margin-left: 30px;
+  }
+  .comprar{
+    margin-right: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 501px) {
+  .navExpand{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .fifth {
+    border-color: #8e44ad;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transition: color 150ms ease-in-out;
+    transition: color 150ms ease-in-out;
+  }
+  .fifth>a{
+    color: black;
+    text-decoration: none;
+  }
+  .fifth:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: rgb(255, 202, 44);
+    z-index: -1;
+    -webkit-transition: width 150ms ease-in-out;
+    transition: width 150ms ease-in-out;
+  }
+  .fifth:hover:after {
+    width: 110%;
+  }
+}
+

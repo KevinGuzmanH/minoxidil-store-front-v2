@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div id="registro" class="bg-dark" >
+  <div class="container bg-white rounded" >
+    <form #f="ngForm" ngNativeValidate (ngSubmit)="registrar(f.valid || false,nombre.value,apellido.value,nombreUsuario.value,correo.value,suscribe.checked,'PAGE',contrase.value)" oninput='confirmarContraseña.setCustomValidity(confirmarContraseña.value != contraseña.value ? "La contraseña no es igual" : "")'>
+      <div class="row mb-4">
+        <div class="col-lg-6 text-center">
+          <div class="form-text text-center fs-2 m-0 text-dark">
+            <span class="title">¡Bienvenido!</span>
+          </div>
+          <div class="form-group ">
+            <input #nombre name="nombre" required placeholder="Nombre" type="text" id="form3Example1" class="form-control" />
+          </div>
+          <div class="form-group my-2">
+            <input #apellido required minlength="4" name="apellido" placeholder="Apellido" type="text" id="form3Example2" class="form-control" />
+          </div>
+          <div class="form-group my-2">
+            <input #nombreUsuario required minlength="4" name="nombreUsuario" placeholder="Nombre de Usuario" type="text" id="form3Example" class="form-control" />
+          </div>
+
+          <!-- Email input -->
+          <div class="form-group my-2">
+            <input #correo  required type="email" name="correo" placeholder="Correo Electronico" id="form3Example3" class="form-control" />
+          </div>
+
+          <!-- Password input -->
+          <div class="form-group my-2">
+            <input #contrase  required name="contraseña" placeholder="Contraseña" type="password" id="contraseña" class="form-control" />
+          </div>
+
+          <div class="form-group my-2">
+            <input required name="confirmarContraseña" placeholder="ConfirmarContraseña" type="password" id="confirmarContraseña" class="form-control" />
+          </div>
+          <div id="text1" class="form-text">
+            Asegurate de utilizar una contraseña segura
+          </div>
+          <!-- Checkbox -->
+          <div  class="form-check d-flex form-switch justify-content-center my-3 ">
+            <input #suscribe class="form-check-input " type="checkbox" id="suscribirse" name="suscribirse"  />
+            <label class="form-check-label" for="suscribirse"
+            >Suscribirse</label
+            >
+          </div>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-warning w-50 btn-block">Registrarse</button>
+
+          <!-- Register buttons -->
+          <div class="text-center mb-2">
+            <div>O registrate con</div>
+            <button (click)="registerInWithFB()" type="button" class="btn btn-warning btn-floating m-1 mx-1">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+
+            <button (click)="registerInWithGoogle()" type="button" class="btn btn-warning btn-floating mx-1">
+              <i class="fab fa-google"></i>
+            </button>
+
+          </div></div>
+        <div class="col-lg-6 text-center my-auto">
+          <div class="form-text">¿Ya tienes cuenta?</div>
+          <button routerLink="/inicio/iniciarSesion" class="btn  btn-warning" aria-describedby="textExample1">Ingresar</button>
+          <div class="form-text">¿Olvidaste tu contraseña?</div>
+          <button class="btn btn-warning mb-2" aria-describedby="textExample1">Recuperar</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

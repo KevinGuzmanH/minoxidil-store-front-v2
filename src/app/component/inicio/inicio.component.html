@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+<div id="init" class="">
+  <div id="row" class="row m-0 pt-5" >
+    <div id="imgPresentacion" class="col-lg-5 ">
+      <div [style.background-image]="'url(./assets/circle.png)'" id="circle" class="mx-auto"><div [style.background-image]="'url(./assets/mino.png)'" id="min" class="mx-5"></div></div>
+    </div>
+    <div id="inicioDos" class="col-lg-6">
+      <h1 id="titulo1" class="mt-5 ms-auto">Minoxidil de Alta Calidad</h1>
+      <p class=" mt-5">Fortalece y estimula el crecimiento del cabello,
+        sea pelo de barba, pelo de cabeza, o en cualquier parte del cuerpo,
+        a la vez que desaselera la calvicie,
+        manteniendo el folículo piloso sano y activo</p>
+      <p> pruebalo, renueva tu imagen y el como te ven </p>
+      <p class="prima">Efectividad comprobada en 2 de cada 3 hombres que lo prueban</p>
+      <span id="precio" class="">Desde <s>40000</s> $ 33.000</span>
+      <div class="card text-center  my-3 ">
+        <span class="btnComprar"> Una buena barba lo vale, un pelo sano lo vale</span>
+        <a *ngIf="loggedIn;" routerLink="/inicio/cart" class="btn btn-primary "> Comprar ahora</a>
+        <a *ngIf="!loggedIn;" routerLink="/inicio/registro" class="btn btn-primary "> Comprar ahora </a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="mt-5">
+<div id="propiedades">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="color2">Ingredientes Activos</h1>
+    </div>
+    <div class="text-center">
+      <p>Los ingredientes de alta calidad mantienen tu cabello sano</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 text-center">
+        <div class="text-center">
+          <img src="assets/Burdock.png" class="mx-auto img-fluid m-0">
+        </div>
+        <div>
+          <p class="descripcionIF">El Burdock es una planta con aplios beneficios, entre ellos ayuda a combatir las impurezas que quedan reflejadas en tu piel por efecto de la acumulación de toxinas </p>
+        </div>
+      </div>
+      <div class="col-lg-3 text-center">
+        <div class="text-center">
+          <img src="assets/Cortex.png" class="mx-auto img-fluid m-0">
+        </div>
+        <div>
+          <p class="descripcionIF">El Cortex es una planta con aplios beneficios, entre ellos el ayudar a mantener el pelo lacio </p>
+        </div>
+      </div>
+      <div class="col-lg-3 text-center">
+        <div class="text-center">
+          <img src="assets/Minoxidil.png" class="mx-auto img-fluid m-0">
+        </div>
+        <div>
+          <p class="descripcionIF">El Minoxidil  </p>
+        </div>
+      </div>
+      <div class="col-lg-3 text-center">
+        <div class="text-center">
+          <img src="assets/Ginseng.png" class="mx-auto img-fluid m-0">
+        </div>
+        <div>
+          <p class="descripcionIF"> El Ginseng potencia la fuerza capilar para un mejor crecimiento del cabello </p>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="text-center">
+          <img src="assets/Multiflorum.png" class="mx-auto img-fluid m-0">
+        </div>
+        <div>
+          <p class="descripcionIF">El Multiflorum proteje el cuero cabelludo y las raíces </p>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="text-center">
+          <img src="assets/Platycadus.png" class="mx-auto img-fluid m-0">
+        </div>
+        <div>
+          <p class="descripcionIF">El Platycadus proteje El cabello de impurezas y nutre el cabello</p>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="text-center">
+          <img src="assets/SAFFLOWER.png" class="mx-auto img-fluid m-0">
+        </div>
+        <div>
+          <p class="descripcionIF">El Safflower ayuda a las pieles sensibles y delicadas, tiene una función hidratante. Ayuda al cabello seco y quebradizo a alquirir nueva vitalidad</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-info></app-info>

@@ -1,0 +1,79 @@
+#titulo{
+  font-size: 50px;
+}
+#titulo1{
+  font-family: "Poor Richard";
+  font-size: 40px;
+}
+#propiedades{
+  margin-top: 73px;
+}
+#precio
+{
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 5px;
+  font-family: DINPro,Helvetica,Arial,Sans-Serif;
+}
+p{
+  font-size: 18px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.prima{
+  color: rgb(13, 110, 253);
+}
+.descripcionIF{
+  font-size: 16px;
+}
+#circle{
+  background-repeat: round;
+}
+#min{
+  height: 260px;
+  width: 230px;
+}
+#imgPresentacion{
+  height: 350px;
+}
+@media only screen and (max-width: 500px) {
+  #inicioDos{
+    padding: 34px;
+  }
+  #imgPresentacion{
+    display: contents;
+  }
+
+  #circle{
+    height: 375px;
+    width: 375px;
+    margin-top: 20px;
+    transform: scale(1);
+  }
+  #min{
+    margin-top: 53px;
+  }
+
+}
+
+@media only screen and (min-width: 501px) {
+  #dos{
+    height: 400px;
+  }
+  #imgPresentacion{
+    margin-left: 60px;
+  }
+  #circle{
+    height: 375px;
+    width: 375px;
+    margin-left: 70px;
+    margin-top: 60px;
+    transform: scale(1.1);
+  }
+  #min{
+    margin-top: 24px;
+    transform: translate(4px,44px);
+  }
+}

@@ -1,0 +1,51 @@
+<header class="fixed-top">
+  <div class="bg-primary  p-0">
+    <div class="row container p-0">
+      <div class="col-md-4 offset-md-2 col-7 ">
+        <span class="text-white ">
+          <i class="bi bi-telephone"> +57 3005316264</i>
+        </span>
+      </div>
+      <div class="col-md-2 offset-md-4 col-5 ">
+        <a type="button" class="btn btn-group-sm text-white btn-sm pb-1 shadow-none" href="#" role="button"><i class="bi bi-facebook"></i></a>
+        <a type="button" class="btn btn-group-sm text-white btn-sm pb-1 mx-1 shadow-none" href="#" role="button"><i class="bi bi-twitter"></i></a>
+        <a type="button" class="btn btn-group-sm text-white btn-sm pb-1 shadow-none" href="#" role="button"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light shadow navbar-expand-lg text-dark bg-white p-0">
+    <div class="container p-0">
+      <a class="navbar-brand" href="#">
+        <img src="assets/IconPrimary.png" alt="" width="65" height="60">
+      </a>
+      <a class="navbar-brand text-dark" href="#">El Gran Barón</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+
+        <ul class="navbar-nav d-flex flex-row me-1 ">
+          <li  class="fifth py-4 ">
+            <a *ngIf="!loggedIn" class="navExpand "  routerLink="/inicio/registro" >Crear Cuenta </a>
+          </li>
+          <li  id="primero" class="fifth py-4 mx-2">
+            <a *ngIf="!loggedIn" class="navExpand" routerLink="/inicio/iniciarSesion" type="button" style="background-color: transparent" >Inicia Sesión </a>
+          </li>
+          <li *ngIf="loggedIn" (click)="signOut()" class="fifth py-4 mx-2">
+            <a class=" " href="#"  >Cerrar Sesión </a>
+          </li>
+          <li  class="fifth py-4 mx-2">
+            <a *ngIf="loggedIn" class="" href="#"  >Comprados </a>
+          </li>
+          <li class="nav-item px-0 ms-auto mb-2">
+            <a *ngIf="loggedIn" class="comprar px-1 mt-3 nav-link active text-white rounded-pill" routerLink="/inicio/cart" type="button"  >Comprar</a>
+            <a *ngIf="!loggedIn" role="button" (click)="avisoLogin()" class="px-1 my-auto mt-3 comprar nav-link active text-white rounded-pill"  >Comprar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div id="login" class="bg-dark" >
+  <div class="container bg-white rounded" >
+    <div class="text-center"><span id="loginTxt">Inicia Sesión</span></div>
+    <form ngNativeValidate (submit)="login(nombreUsuario.value,password.value)" class="bg-transparent border border-white text-white text-center pb-5">
+      <!-- User Name input -->
+
+      <div class="form-group  mx-auto pt-5 w-50 ">
+        <input  #nombreUsuario required id="formCorreo" placeholder="Nombre de Usuario" class="form-control login text-center" style="margin-top: 7px"/>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-group my-4 mx-auto w-50">
+        <input #password required type="password" id="formContraseña" placeholder="Contraseña" class="form-control login text-center" />
+      </div>
+
+      <!-- 2 column grid layout for inline styling -->
+      <div class="row mb-1 justify-content-center">
+        <div class="col-lg-3 col-12 mx-2">
+          <a href="#" class="text-decoration-none">Recuperar Contraseña</a>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button  type="submit" class="btn btn-warning btn-block w-50 mb-1 ">Entrar</button>
+
+      <!-- Register buttons -->
+      <div class="text-center py-3">
+        <button (click)="signInWithFB()" type="button" class="btn  btn-warning btn-floating mx-1">
+          <i class="fab fa-facebook-f" ></i>
+        </button>
+
+        <button (click)="signInWithGoogle()" type="button" class="btn btn-warning btn-floating mx-1">
+          <i class="fab fa-google" ></i>
+        </button>
+
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div>
+  <div id="cart" class="container bg-white">
+    <div>
+      <span class="border-dark border-end fs-5"><strong>Minoxidil </strong></span>
+      <span class="mx-1 fs-5"> Comprar Ahora</span>
+    </div>
+    <div class="row m-0">
+      <div class="col-lg-8 d-flex">
+        <img class="img-fluid" src="assets/cartImg.png">
+      </div>
+      <div class="col-lg-4 p-0 shadow-lg" style="background-color: rgb(70, 65, 62)">
+        <form ngNativeValidate>
+          <div style="height: 400px" >
+            <div class="text-center mt-5">
+              <div class="text-white fs-3 mb-4">Detalles de Compra</div>
+              <div class="text-warning fs-5">Correo de Contacto</div>
+              <div class="text-white">{{correoUsuario}}</div>
+              <div class="text-warning">Cantidad</div>
+              <a (click)="cambiarCantidad(true,check.checked)" class="btn btn-warning rounded-circle m-1">+</a>
+              <input id="form1" type="number" class="py-1 mx-auto" [(ngModel)]="cantidadCompra" [ngModelOptions]="{standalone: true}">
+              <a (click)="cambiarCantidad(false,check.checked)" class="btn btn-warning rounded-circle m-1">-</a>
+              <div class="form-check form-switch mx-auto my-3">
+                <input #check (click)="goteroSt(check.checked)" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+                <label class="form-check-label text-white" for="flexSwitchCheckChecked">Incluir Gotero</label>
+              </div>
+              <div class="text-warning">Subtotal</div>
+              <div><span class="text-white fs-2">{{total}}</span></div>
+            </div>
+          </div>
+          <a target="_blank" (click)="compra(check.checked)" href="{{route}}" class="btn btn-warning d-block w-100">Finalizar Compra</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
