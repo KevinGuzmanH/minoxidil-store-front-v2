@@ -15,8 +15,6 @@ import { InicioSesionComponent } from './component/inicio-sesion/inicio-sesion.c
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ShopComponent } from './component/shop/shop.component';
-//Service
-import {AutenticacionService} from "./Service/autenticacion/autenticacion.service";
 //Inicio de Sesión
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
@@ -44,7 +42,7 @@ import {
     FormsModule,
     SocialLoginModule,
   ],
-  providers: [AutenticacionService,{
+  providers: [{
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
