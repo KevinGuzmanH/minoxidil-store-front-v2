@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Inject} from "@angular/core";
-import {TokenService} from "../../Service/token/token.service";
-import {AlertasService} from "../../Service/alertas/alertas.service";
-import {AutenticacionService} from "../../Service/autenticacion/autenticacion.service";
+import {TokenService} from "../../service/token/token.service";
+import {AlertasService} from "../../service/alertas/alertas.service";
+import {AutenticacionService} from "../../service/autenticacion/autenticacion.service";
 import { PLATFORM_ID} from "@angular/core";
 import { isPlatformBrowser} from "@angular/common";
 
