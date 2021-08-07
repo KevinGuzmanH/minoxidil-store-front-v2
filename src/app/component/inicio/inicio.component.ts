@@ -1,10 +1,10 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {TokenService} from "../../Service/token/token.service";
-import {AlertasService} from "../../Service/alertas/alertas.service";
+import {TokenService} from "../../service/token/token.service";
+import {AlertasService} from "../../service/alertas/alertas.service";
 import { TimelineMax } from 'gsap';
 import { gsap} from "gsap/all";
 import { PLATFORM_ID} from "@angular/core";
-import { isPlatformBrowser, isPlatformServer} from "@angular/common";
+import { isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-inicio',

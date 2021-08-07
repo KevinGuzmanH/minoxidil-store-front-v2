@@ -1,8 +1,8 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
-import { AutenticacionService} from "../../Service/autenticacion/autenticacion.service";
+import { AutenticacionService} from "../../service/autenticacion/autenticacion.service";
 import { NuevoUsuario} from "../../model/nuevoUsuario";
 import { Router } from "@angular/router";
-import { AlertasService } from "../../Service/alertas/alertas.service";
+import { AlertasService } from "../../service/alertas/alertas.service";
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";

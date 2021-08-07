@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {TokenService} from "../../Service/token/token.service";
+import {TokenService} from "../../service/token/token.service";
 import { PLATFORM_ID} from "@angular/core";
 import { isPlatformBrowser, isPlatformServer} from "@angular/common";
 

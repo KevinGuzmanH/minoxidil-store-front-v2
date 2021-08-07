@@ -1,10 +1,10 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {LoginUser} from "../../model/loginUser";
 import {FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser} from "angularx-social-login";
-import {AutenticacionService} from "../../Service/autenticacion/autenticacion.service";
-import {TokenService} from "../../Service/token/token.service";
+import {AutenticacionService} from "../../service/autenticacion/autenticacion.service";
+import {TokenService} from "../../service/token/token.service";
 import {Router} from "@angular/router";
-import {AlertasService} from "../../Service/alertas/alertas.service";
+import {AlertasService} from "../../service/alertas/alertas.service";
 import { PLATFORM_ID} from "@angular/core";
 import { isPlatformBrowser, isPlatformServer} from "@angular/common";
 
