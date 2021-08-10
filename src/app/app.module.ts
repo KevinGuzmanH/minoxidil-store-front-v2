@@ -15,6 +15,9 @@ import { InicioSesionComponent } from './component/inicio-sesion/inicio-sesion.c
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ShopComponent } from './component/shop/shop.component';
+import { RecuperarPwdComponent } from './component/recuperar-pwd/recuperar-pwd.component';
+import { RecuperarPwdFinalComponent } from './component/recuperar-pwd-final/recuperar-pwd-final.component';
+
 //Inicio de Sesión
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
@@ -33,7 +36,9 @@ import { PruComponent } from './component/pru/pru.component';
     NavbarComponent,
     RegisterComponent,
     ShopComponent,
-    PruComponent
+    PruComponent,
+    RecuperarPwdComponent,
+    RecuperarPwdFinalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

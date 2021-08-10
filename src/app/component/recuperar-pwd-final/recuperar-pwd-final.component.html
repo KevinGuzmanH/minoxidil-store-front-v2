@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div id="resetPassFinal" class="bg-dark" >
+
+
+   <ng-template [ngIf]="valido">
+   <div class="container bg-white rounded" >
+    <form ngNativeValidate (submit)="cambiarPwd(newPassword.value)" oninput='ConfirmNewPassword.setCustomValidity(ConfirmNewPassword.value != newPassword.value ? "La contraseña no coincide": "" )' class="bg-transparent border border-white text-white text-center pb-5">
+
+      <legend class="text-dark">Recuperar Cuenta</legend>
+      <!-- new password input -->
+      <div class="form-group my-2 mx-auto w-50">
+        <input #newPassword name="newPassword" id="newPassword" required type="text" id="formResetContraseña" placeholder="Nueva Contraseña" class="form-control login text-center" />
+      </div>
+      <!-- confirm new password input -->
+      <div class="form-group my-2 mx-auto w-50">
+        <input required name="ConfirmNewPassword" id="ConfirmNewPassword" type="text" id="disabledTextInput" class="form-control text-center" placeholder="Confirmar Contraseña" aria-describedby="passwordHelpBlock">
+      </div>
+      <div id="passwordHelpBlock" class="form-text">
+        Asegurate de escribir una contraseña que recuerdes fácilmente.
+      </div>
+      <!-- Submit button -->
+      <button  type="submit" class="btn btn-warning btn-block w-50 my-2">Recuperar</button>
+
+    </form>
+   </div>
+   </ng-template>
+
+    <ng-template [ngIf]="!valido">
+      <div id="expiracionDiv" class="container bg-white rounded" >
+        <div class="text-center">
+         <h1>Tu Sesión ha expirado </h1>
+          <div class="text-center">
+            <a class="fs-5" href="/inicio/recuperar">¡Reintenta aquí!</a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+</div>

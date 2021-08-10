@@ -10,6 +10,7 @@ import {LoginUser} from "../../model/loginUser";
 })
 export class AutenticacionService {
   URL = 'https://tiendamin-carlos-kevin.herokuapp.com/auth/';
+
   constructor(private client: HttpClient) { }
 
   public newUser(cuenta: NuevoUsuario){
@@ -22,5 +23,17 @@ export class AutenticacionService {
 
   public register(correo: string){
     return this.client.put(this.URL + 'register',correo,{responseType: "text"});
+  }
+
+  public recuperar(correo: string):Observable<string>{
+    return this.client.get(this.URL + 'recuperar/' + correo, {responseType: "text"});
+  }
+
+  public validarToken(token: string):Observable<boolean>{
+    return this.client.get<boolean>(this.URL + 'validartoken/' + token);
+  }
+
+  public cambiarPwd(nuevapwd: string, token: string){
+    return this.client.get(this.URL + "cambiarpwd/" + token + "/" + nuevapwd,{responseType: "text"});
   }
 }
