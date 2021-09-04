@@ -10,47 +10,47 @@ import set = gsap.set;
   providedIn: 'root'
 })
 export class AutenticacionService {
-  URL = 'https://tiendamin-carlos-kevin.herokuapp.com/auth/';
-  LOCALURL = 'http://localhost:4000/auth/';
+  URL = 'https://mincookir.herokuapp.com/auth/';
+
 
   constructor(private client: HttpClient) { }
 
   public newUser(cuenta: NuevoUsuario){
     const headers = new HttpHeaders()
       .set('content-type','application/json');
-    return this.client.post(this.LOCALURL + 'new',cuenta,{'headers':headers});
+    return this.client.post(this.URL + 'new',cuenta,{'headers':headers});
   }
 
   public login(cuenta: LoginUser): Observable<JwtDto>{
-    return this.client.post<JwtDto>(this.LOCALURL + 'login', cuenta);
+    return this.client.post<JwtDto>(this.URL + 'login', cuenta);
   }
 
   public recuperar(correo: string){
     const headers = new HttpHeaders()
       .set('content-type','application/json')
       .set('email', correo);
-    return this.client.get(this.LOCALURL + 'sendRecoverPwd', {'headers': headers});
+    return this.client.get(this.URL + 'sendRecoverPwd', {'headers': headers});
   }
 
   public sendConfirmEmail(correo: string):Observable<string>{
     const headers = new HttpHeaders()
       .set('content-type','application/json')
       .set('email', correo);
-    return this.client.get<string>(this.LOCALURL + 'sendConfirmationEmail', {'headers': headers});
+    return this.client.get<string>(this.URL + 'sendConfirmationEmail', {'headers': headers});
   }
 
   public confirmEmail(token: string):Observable<boolean>{
     const headers = new HttpHeaders()
       .set('content-type','application/json')
       .set('access_token', token);
-    return this.client.get<boolean>(this.LOCALURL + 'confirmemail', {'headers': headers});
+    return this.client.get<boolean>(this.URL + 'confirmemail', {'headers': headers});
   }
 
   public validarToken(token: string):Observable<boolean>{
     const headers = new HttpHeaders()
       .set('content-type','application/json')
       .set('access_token',token)
-    return this.client.get<boolean>(this.LOCALURL + 'validateToken',{'headers': headers});
+    return this.client.get<boolean>(this.URL + 'validateToken',{'headers': headers});
   }
 
   public cambiarPwd(nuevapwd: string, token: string):Observable<string>{
@@ -58,7 +58,7 @@ export class AutenticacionService {
       .set('content-type','application/json')
       .set('access_token',token)
       .set('newpwd',nuevapwd);
-   return this.client.get<string>(this.LOCALURL + 'changePwd',{'headers': headers});
+   return this.client.get<string>(this.URL + 'changePwd',{'headers': headers});
   }
 
   public registerOrder(token: string,amount: string){
@@ -66,6 +66,6 @@ export class AutenticacionService {
       .set('content-type','application/json')
       .set('access_token',token)
       .set('amount',amount)
-   return this.client.post(this.LOCALURL + 'registerOrder',null,{'headers': headers});
+   return this.client.post(this.URL + 'registerOrder',null,{'headers': headers});
   }
 }

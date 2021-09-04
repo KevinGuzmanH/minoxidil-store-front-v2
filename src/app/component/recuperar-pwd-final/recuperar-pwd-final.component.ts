@@ -41,7 +41,7 @@ export class RecuperarPwdFinalComponent implements OnInit {
         this.alertas.succes(data,"Aviso");
         setTimeout(() => {
           if (isPlatformBrowser(this.platformId)) {
-           // window.location.href = "https://minoxidil-nm.herokuapp.com/inicio/iniciarSesion";
+            window.location.href = "https://minoxidilfront.herokuapp.com/inicio/iniciarSesion";
           }
         }, 5000);
 

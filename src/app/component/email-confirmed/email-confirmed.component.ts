@@ -28,7 +28,7 @@ export class EmailConfirmedComponent implements OnInit {
         this.valido = data;
         setTimeout(() => {
           if (isPlatformBrowser(this.platformId)) {
-            // window.location.href = "https://minoxidil-nm.herokuapp.com/inicio/iniciarSesion";
+             window.location.href = "https://minoxidilfront.herokuapp.com/inicio/iniciarSesion";
           }
         }, 5000);
       },error => {
