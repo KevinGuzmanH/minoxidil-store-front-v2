@@ -14,8 +14,6 @@
           <div style="height: 400px" >
             <div class="text-center mt-5">
               <div class="text-white fs-3 mb-4">Detalles de Compra</div>
-              <div class="text-warning fs-5">Correo de Contacto</div>
-              <div class="text-white">{{correoUsuario}}</div>
               <div class="text-warning">Cantidad</div>
               <a (click)="cambiarCantidad(true,check.checked)" class="btn btn-warning rounded-circle m-1">+</a>
               <input id="form1" type="number" class="py-1 mx-auto" [(ngModel)]="cantidadCompra" [ngModelOptions]="{standalone: true}">

@@ -4,6 +4,7 @@ import { isPlatformBrowser, isPlatformServer} from "@angular/common";
 
 const TOKEN_KEY = 'AuthToken';
 const EMAIL_KEY = 'AuthEmail';
+const ROLES_KEY = 'AuthRoles';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,21 @@ export class TokenService {
       this.string = <string>sessionStorage.getItem(EMAIL_KEY);
     }
     return this.string;
+  }
+
+  public setRoles(roles: string[]): void{
+    if (isPlatformBrowser(this.platformId)) {
+      window.sessionStorage.removeItem(ROLES_KEY);
+      window.sessionStorage.setItem(ROLES_KEY, JSON.stringify(roles));
+    }
+  }
+
+  public getRoles(): string[]{
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.roles = JSON.parse(sessionStorage.getItem(ROLES_KEY) || "");
+    }
+    return this.roles;
   }
 
   public cerrarSesion():void {

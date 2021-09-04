@@ -19,10 +19,10 @@ export class InicioSesionComponent implements OnInit {
   loggedIn!: boolean;
   constructor(@Inject(PLATFORM_ID) private platformId: object,
               private authService: AutenticacionService
-    ,private tokenService: TokenService
-    ,private router: Router
-    ,private alerta: AlertasService
-    ,private authServiceSocial: SocialAuthService) { }
+              ,private tokenService: TokenService
+              ,private router: Router
+              ,private alerta: AlertasService
+              ,private authServiceSocial: SocialAuthService) { }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -34,19 +34,18 @@ export class InicioSesionComponent implements OnInit {
 
   login(nombreUsuario: string, contraseña: string){
     if (isPlatformBrowser(this.platformId)) {
-      this.loginUsuario.nombreUsuario = nombreUsuario;
+      this.loginUsuario.email = nombreUsuario;
       this.loginUsuario.password = contraseña;
 
       this.authService.login(this.loginUsuario).subscribe(
         data => {
-          this.alerta.succes('Bienvenido de vuelta', '');
+          this.alerta.succes('Bienvenido de Vuelta', '');
           this.loggedIn = true;
-          sessionStorage.setItem('correoUsuario', data.correoUsuario);
+          this.tokenService.setToken(data.access_token);
+          this.tokenService.setRoles(data.auth);
           this.router.navigateByUrl('');
-          this.tokenService.setToken(data.token);
         }, error => {
           this.alerta.error(error.error, 'Error')
-          console.log(error.error);
         }
       );
     }

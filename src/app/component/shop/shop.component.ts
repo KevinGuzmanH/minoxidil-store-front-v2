@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {TokenService} from "../../service/token/token.service";
 import { PLATFORM_ID} from "@angular/core";
 import { isPlatformBrowser, isPlatformServer} from "@angular/common";
+import {AutenticacionService} from "../../service/autenticacion/autenticacion.service";
 
 @Component({
   selector: 'app-shop',
@@ -11,19 +12,11 @@ import { isPlatformBrowser, isPlatformServer} from "@angular/common";
 export class ShopComponent implements OnInit {
   cantidadCompra = 1;
   route!: string;
-  correoUsuario = 'Registrate Antes de Comprar';
-  telefonoUsuario!: number;
   gotero!: boolean;
   total = 30000;
-  constructor(@Inject(PLATFORM_ID) private platformId: object,private tokenService: TokenService) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: object,private tokenService: TokenService,private autenticationService: AutenticacionService) { }
 
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      if (this.tokenService.getToken()) {
-        this.correoUsuario = sessionStorage.getItem('correoUsuario') || '';
-      }
-    }
-  }
+  ngOnInit(): void {}
 
   cambiarCantidad(subir: boolean, gotero: boolean){
     if (subir) {
@@ -49,6 +42,8 @@ export class ShopComponent implements OnInit {
   }
 
   compra(checked: boolean){
+    const token = this.tokenService.getToken();
+    this.autenticationService.registerOrder(token,this.cantidadCompra.toString()).subscribe();
     if (checked){
 
     }else {

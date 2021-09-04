@@ -26,18 +26,4 @@ export class FooterComponent implements OnInit {
     }
   };
 
-  suscribe(){
-    if (isPlatformBrowser(this.platformId)) {
-      let correo = sessionStorage.getItem('correoUsuario') || '';
-      this.authService.register(correo).subscribe(
-        data => {
-          console.log(data)
-          this.alerta.succes(data,"Alerta")
-        },error => {
-          console.log(error)
-          this.alerta.informar(error.error,'Alerta');
-        }
-      );
-    }
-  }
 }

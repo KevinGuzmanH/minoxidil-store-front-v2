@@ -1,18 +1,17 @@
 
 export class JwtDto{
-  token: string;
-  bearer: string;
-  nombreUsuario: string;
-  correoUsuario: string;
-  authorities: string;
+
+  access_token: string;
+  token_type: string;
+  expires_in: Date;
+  auth: string[];
 
 
-  constructor(token: string, type: string, nombre: string,correoUsuario: string, correo: string, authorities: string) {
-    this.token = token;
-    this.bearer = type;
-    this.nombreUsuario = nombre;
-    this.correoUsuario = correoUsuario;
-    this.authorities = authorities;
+  constructor(access_token: string, token_type: string, expires_in: Date, auth: string[]) {
+    this.access_token = access_token;
+    this.token_type = token_type;
+    this.expires_in = expires_in;
+    this.auth = auth;
   }
 
 

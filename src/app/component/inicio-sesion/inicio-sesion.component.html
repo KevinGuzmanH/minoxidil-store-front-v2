@@ -2,11 +2,11 @@
 <div id="login" class="bg-dark" >
   <div class="container bg-white rounded" >
     <div class="text-center"><span id="loginTxt">Inicia Sesión</span></div>
-    <form ngNativeValidate (submit)="login(nombreUsuario.value,password.value)" class="bg-transparent border border-white text-white text-center pb-5">
-      <!-- User Name input -->
+    <form ngNativeValidate (submit)="login(correo.value,password.value)" class="bg-transparent border border-white text-white text-center pb-5">
+      <!-- Email input -->
 
       <div class="form-group  mx-auto pt-5 w-50 ">
-        <input  #nombreUsuario required id="formCorreo" placeholder="Nombre de Usuario" class="form-control login text-center" style="margin-top: 7px"/>
+        <input  #correo required type="email" id="formCorreo" placeholder="Correo" class="form-control login text-center" style="margin-top: 7px"/>
       </div>
 
       <!-- Password input -->
@@ -14,7 +14,6 @@
         <input #password required type="password" id="formContraseña" placeholder="Contraseña" class="form-control login text-center" />
       </div>
 
-      <!-- 2 column grid layout for inline styling -->
       <div class="row mb-1 justify-content-center">
         <div class="col-lg-3 col-12 mx-2">
           <a href="/inicio/recuperar" class="text-decoration-none">Recuperar Contraseña</a>

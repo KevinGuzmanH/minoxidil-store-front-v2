@@ -17,6 +17,7 @@ export class InicioComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: object,private tokenService: TokenService,private alerta: AlertasService) { }
 
   ngOnInit(): void {
+    fetch("https://mincookir.herokuapp.com/auth/cookie").then(x => console.log(x));
     if (isPlatformBrowser(this.platformId)) {
       if (this.tokenService.getToken() != null) {
         this.loggedIn = true;

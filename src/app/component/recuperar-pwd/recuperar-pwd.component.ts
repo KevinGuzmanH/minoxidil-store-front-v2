@@ -17,7 +17,7 @@ export class RecuperarPwdComponent implements OnInit {
   recuperar(email:string){
     this.autentication.recuperar(email).subscribe(
       data => {
-        this.alertas.succes(data,"Enviado");
+        this.alertas.succes(data.toString(),"Enviado");
       },error => {
         this.alertas.error(error.error,"Error");
       }

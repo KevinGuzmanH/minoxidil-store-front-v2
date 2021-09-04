@@ -14,9 +14,8 @@ import { isPlatformBrowser, isPlatformServer} from "@angular/common";
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  newUser = new NuevoUsuario('','','','','NO','PAGE','');
-  user!: SocialUser;
-  loggedIn!: boolean;
+  newUser = new NuevoUsuario('','','','PAGE','','');
+
   constructor(@Inject(PLATFORM_ID) private platformId: object,
               private authService: AutenticacionService
     ,private router: Router
@@ -28,26 +27,21 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  registrar(valido: boolean, nombre: string, apellido: string,nombreUsuario: string, correo: string,suscribe: boolean,provider: string, contrase: string) {
-    this.newUser.nombre = nombre;
-    this.newUser.apellido = apellido;
-    this.newUser.nombreUsuario = nombreUsuario;
+  registrar(valido: boolean, nombre: string, apellido: string, correo: string,provider: string,phone: string, contrase: string) {
+    this.newUser.firstname = nombre;
+    this.newUser.lastname = apellido;
     this.newUser.email = correo;
     this.newUser.provider = provider;
+    this.newUser.phone = phone;
     this.newUser.password = contrase;
-    if (suscribe){
-      this.newUser.suscribe = 'YES'
-    }
-
+    console.log(this.newUser);
     if (isPlatformBrowser(this.platformId)) {
       if (valido) {
         this.authService.newUser(this.newUser).subscribe(
           data => {
-            this.alerta.succes('Listo, Inicia sesión', '');
-            this.router.navigate(['inicio']);
+            this.alerta.succes(data.toString(), '');
           }, error => {
             this.alerta.error(error.error, 'Error');
-            console.log(error.error.mensaje)
           }
         );
       } else {
@@ -61,7 +55,8 @@ export class RegisterComponent implements OnInit {
       this.authServiceSocial.signIn(GoogleLoginProvider.PROVIDER_ID);
       this.authServiceSocial.authState.subscribe(
         (user) => {
-          this.registrar(true, user.firstName, user.lastName, user.id, user.email, false, user.provider, user.id);
+          console.log(user);
+          this.registrar(true, user.firstName, user.lastName, user.email, user.provider,'', user.id);
         }
       )
     }
@@ -72,7 +67,8 @@ export class RegisterComponent implements OnInit {
       this.authServiceSocial.signIn(FacebookLoginProvider.PROVIDER_ID);
       this.authServiceSocial.authState.subscribe(
         (user) => {
-          this.registrar(true, user.firstName, user.lastName, user.id, user.email, false, user.provider, user.id);
+          console.log(user);
+          this.registrar(true, user.firstName, user.lastName,user.email, user.provider,'', user.id);
         }
       )
     }
