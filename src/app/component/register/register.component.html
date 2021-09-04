@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 <div id="registro" class="bg-dark" >
   <div class="container bg-white rounded" >
-    <form #f="ngForm" ngNativeValidate (ngSubmit)="registrar(f.valid || false,nombre.value,apellido.value,correo.value,'PAGE',telefono.value,contrase.value)" oninput='confirmarContraseña.setCustomValidity(confirmarContraseña.value != contraseña.value ? "La contraseña no es igual" : "")'>
+    <ng-template [ngIf]="!valido">
+    <form id="firstPart" #f="ngForm" ngNativeValidate (ngSubmit)="registrar(f.valid || false,nombre.value,apellido.value,correo.value,'PAGE',telefono.value,contrase.value)" oninput='confirmarContraseña.setCustomValidity(confirmarContraseña.value != contraseña.value ? "La contraseña no es igual" : "")'>
       <div class="row mb-4">
         <div class="col-lg-6 text-center">
           <div class="form-text text-center fs-2 m-0 text-dark">
@@ -57,5 +58,26 @@
 
       </div>
     </form>
+    </ng-template>
   </div>
-</div>
+
+  <div id="registro1" class="bg-dark" >
+    <ng-template [ngIf]="valido">
+      <div id="secondPart" class="container bg-white rounded" >
+        <form ngNativeValidate (ngSubmit)="registrarWithExternal(telefono.value)" class="bg-transparent border border-white text-white text-center pb-5">
+
+          <!-- email input -->
+          <div class="form-group my-4 mx-auto w-50">
+            <label class="form-group-label text-dark text-center p-2" for="telefono">Ingresa Tu Número Teléfonico</label>
+            <input #telefono required type="number" id="telefono" placeholder="Teléfono" class="form-control login text-center" />
+          </div>
+
+          <!-- Submit button -->
+          <button  type="submit" class="btn btn-warning btn-block w-50 mb-1 ">Registrarse</button>
+
+        </form>
+      </div>
+    </ng-template>
+    </div>
+  </div>
+

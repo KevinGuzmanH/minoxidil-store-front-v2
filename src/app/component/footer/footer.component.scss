@@ -8,3 +8,22 @@ a{
 a:hover{
   text-decoration: underline;
 }
+img{
+  background-color: white;
+  padding: 7px;
+  width: 88px;
+}
+row{
+  margin: 0px;
+}
+#imgAmericanExpress{
+  padding-bottom: 14px
+}
+@media only screen and (max-width: 600px){
+  img{
+    margin-top: 4px;
+  }
+  #imgAmericanExpress{
+    padding-bottom: 19px
+  }
+}

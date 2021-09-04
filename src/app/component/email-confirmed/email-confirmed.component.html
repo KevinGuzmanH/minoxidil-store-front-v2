@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div id="ConfirmEmail" class="bg-dark" >
+
+  <ng-template [ngIf]="valido">
+    <div class="container bg-white rounded messageDiv" >
+      <div class="text-center">
+        <h1>¡Email Confirmado Ya Puedes Iniciar Sesión!</h1>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template [ngIf]="!valido">
+    <div class="container bg-white rounded messageDiv">
+      <div class="text-center">
+        <h1>Tu Sesión ha expirado</h1>
+        <div class="text-center">
+          <a class="fs-5" href="/inicio/confirmEmail">Reintenta aquí</a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</div>

@@ -56,7 +56,7 @@ export class InicioSesionComponent implements OnInit {
       this.authServiceSocial.signIn(GoogleLoginProvider.PROVIDER_ID);
       this.authServiceSocial.authState.subscribe((user) => {
         this.user = user;
-        this.login(user.id, user.id);
+        this.login(user.email, user.id);
       });
     }
   }
@@ -66,7 +66,7 @@ export class InicioSesionComponent implements OnInit {
       this.authServiceSocial.signIn(FacebookLoginProvider.PROVIDER_ID);
       this.authServiceSocial.authState.subscribe((user) => {
         this.user = user;
-        this.login(user.id, user.id);
+        this.login(user.email, user.id);
       });
     }
   }

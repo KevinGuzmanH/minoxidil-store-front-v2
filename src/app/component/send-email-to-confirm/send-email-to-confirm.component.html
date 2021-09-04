@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div id="senEmail" class="bg-dark" >
+  <div class="container bg-white rounded" >
+    <form ngNativeValidate (submit)="sendConfirmationEmail(email.value)" class="bg-transparent border border-white text-white text-center pb-5">
+
+      <!-- email input -->
+      <div class="form-group my-4 mx-auto w-50">
+        <label class="form-group-label text-dark text-center p-2" for="formEmail">Ingrese correo al que está asociado su cuenta, se le enviará un correo de verificación</label>
+        <input #email required type="email" id="formEmail" placeholder="Correo" class="form-control login text-center" />
+      </div>
+
+      <!-- Submit button -->
+      <button  type="submit" class="btn btn-warning btn-block w-50 mb-1 ">Envíar Correo</button>
+
+    </form>
+  </div>
+</div>
+

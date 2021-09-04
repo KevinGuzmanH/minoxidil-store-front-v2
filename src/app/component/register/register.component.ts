@@ -15,7 +15,7 @@ import { isPlatformBrowser, isPlatformServer} from "@angular/common";
 })
 export class RegisterComponent implements OnInit {
   newUser = new NuevoUsuario('','','','PAGE','','');
-
+  valido: boolean = false;
   constructor(@Inject(PLATFORM_ID) private platformId: object,
               private authService: AutenticacionService
     ,private router: Router
@@ -50,13 +50,30 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  registrarWithExternal(phone: string) {
+    this.newUser.phone = phone;
+    if (isPlatformBrowser(this.platformId)) {
+      this.authService.newUser(this.newUser).subscribe(
+          data => {
+            this.alerta.succes(data.toString(), '');
+          }, error => {
+            this.alerta.error(error.error, 'Error');
+          }
+        );
+     }
+  }
+
   registerInWithGoogle(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.authServiceSocial.signIn(GoogleLoginProvider.PROVIDER_ID);
       this.authServiceSocial.authState.subscribe(
         (user) => {
-          console.log(user);
-          this.registrar(true, user.firstName, user.lastName, user.email, user.provider,'', user.id);
+          this.newUser.firstname = user.firstName;
+          this.newUser.lastname = user.lastName;
+          this.newUser.email = user.email;
+          this.newUser.provider = user.provider;
+          this.newUser.password = user.id;
+          this.valido = true;
         }
       )
     }
@@ -67,8 +84,12 @@ export class RegisterComponent implements OnInit {
       this.authServiceSocial.signIn(FacebookLoginProvider.PROVIDER_ID);
       this.authServiceSocial.authState.subscribe(
         (user) => {
-          console.log(user);
-          this.registrar(true, user.firstName, user.lastName,user.email, user.provider,'', user.id);
+          this.newUser.firstname = user.firstName;
+          this.newUser.lastname = user.lastName;
+          this.newUser.email = user.email;
+          this.newUser.provider = user.provider;
+          this.newUser.password = user.id;
+          this.valido = true;
         }
       )
     }

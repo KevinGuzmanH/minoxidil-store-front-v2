@@ -1,13 +1,18 @@
-#registro{
+#registro,#registro1{
   padding-top: 20px;
   padding-bottom: 60px;
+}
+#registro1{
+  margin-block: 3rem;
+}
+#secondPart{
+  padding-block: 2rem;
 }
 .btn-floating .fab, .btn-floating .far, .btn-floating .fas {
   width: 1rem;
   line-height: 1rem;
 }
 hr{
-
   border:         none;
   border-left:    1px solid hsla(200, 10%, 50%,100);
   width:          1px;

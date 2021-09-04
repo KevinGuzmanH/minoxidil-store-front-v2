@@ -25,15 +25,25 @@ export class AutenticacionService {
     return this.client.post<JwtDto>(this.LOCALURL + 'login', cuenta);
   }
 
-  public register(correo: string){
-    return this.client.put(this.URL + 'register',correo,{});
-  }
-
   public recuperar(correo: string){
     const headers = new HttpHeaders()
       .set('content-type','application/json')
       .set('email', correo);
     return this.client.get(this.LOCALURL + 'sendRecoverPwd', {'headers': headers});
+  }
+
+  public sendConfirmEmail(correo: string):Observable<string>{
+    const headers = new HttpHeaders()
+      .set('content-type','application/json')
+      .set('email', correo);
+    return this.client.get<string>(this.LOCALURL + 'sendConfirmationEmail', {'headers': headers});
+  }
+
+  public confirmEmail(token: string):Observable<boolean>{
+    const headers = new HttpHeaders()
+      .set('content-type','application/json')
+      .set('access_token', token);
+    return this.client.get<boolean>(this.LOCALURL + 'confirmemail', {'headers': headers});
   }
 
   public validarToken(token: string):Observable<boolean>{

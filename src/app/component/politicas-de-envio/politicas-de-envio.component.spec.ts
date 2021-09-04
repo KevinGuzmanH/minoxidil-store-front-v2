@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PruComponent } from './pru.component';
+import { PoliticasDeEnvioComponent } from './politicas-de-envio.component';
 
-describe('PruComponent', () => {
-  let component: PruComponent;
-  let fixture: ComponentFixture<PruComponent>;
+describe('PoliticasDeEnvioComponent', () => {
+  let component: PoliticasDeEnvioComponent;
+  let fixture: ComponentFixture<PoliticasDeEnvioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PruComponent ]
+      declarations: [ PoliticasDeEnvioComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PruComponent);
+    fixture = TestBed.createComponent(PoliticasDeEnvioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

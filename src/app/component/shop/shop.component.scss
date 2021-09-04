@@ -1,5 +1,5 @@
 #cart{
-  padding-top: 30px;
+  padding-top: 8px;
   padding-bottom: 40px;
 }
 
@@ -12,5 +12,10 @@
   }
 }
 @media only screen and (max-width: 500px){
-
+  #cart > div.row.m-0 > div.col-lg-8.d-flex{
+    padding: 0px;
+  }
+  img{
+    margin-top: 10px;
+  }
 }

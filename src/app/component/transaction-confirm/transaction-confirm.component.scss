@@ -1,0 +1,25 @@
+#transactionImg{
+  height: 76vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 92%;
+}
+.row{
+  margin: 0px;
+}
+#gratitudMg{
+  margin-top: 8rem;
+  font-size: 17px;
+  margin-left: 3rem;
+  font-family: 'Font Awesome 5 Brands';
+}
+@media only screen and (max-width: 600px){
+  #gratitudMg {
+    margin-top: 2rem;
+    font-size: 17px;
+    margin-left: 1rem;
+  }
+  #transactionImg {
+    height: 46vh;
+  }
+}

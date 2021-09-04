@@ -17,6 +17,9 @@ import { RegisterComponent } from './component/register/register.component';
 import { ShopComponent } from './component/shop/shop.component';
 import { RecuperarPwdComponent } from './component/recuperar-pwd/recuperar-pwd.component';
 import { RecuperarPwdFinalComponent } from './component/recuperar-pwd-final/recuperar-pwd-final.component';
+import { SendEmailToConfirmComponent } from './component/send-email-to-confirm/send-email-to-confirm.component';
+import { EmailConfirmedComponent } from './component/email-confirmed/email-confirmed.component';
+import { PoliticasDeEnvioComponent } from "./component/politicas-de-envio/politicas-de-envio.component";
 
 //Inicio de Sesión
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
@@ -24,7 +27,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-import { PruComponent } from './component/pru/pru.component';
+import { TransactionConfirmComponent } from './component/transaction-confirm/transaction-confirm.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +39,12 @@ import { PruComponent } from './component/pru/pru.component';
     NavbarComponent,
     RegisterComponent,
     ShopComponent,
-    PruComponent,
     RecuperarPwdComponent,
-    RecuperarPwdFinalComponent
+    RecuperarPwdFinalComponent,
+    EmailConfirmedComponent,
+    SendEmailToConfirmComponent,
+    PoliticasDeEnvioComponent,
+    TransactionConfirmComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

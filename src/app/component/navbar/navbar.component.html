@@ -37,9 +37,6 @@
           <li *ngIf="loggedIn" (click)="signOut()" class="fifth py-4 mx-2">
             <a class=" " href="#"  >Cerrar Sesión </a>
           </li>
-          <li  class="fifth py-4 mx-2">
-            <a *ngIf="loggedIn" class="" href="#"  >Comprados </a>
-          </li>
           <li class="nav-item px-0 ms-auto mb-2">
             <a *ngIf="loggedIn" class="comprar px-1 mt-3 nav-link active text-white rounded-pill" routerLink="/inicio/cart" type="button"  >Comprar</a>
             <a *ngIf="!loggedIn" role="button" (click)="avisoLogin()" class="px-1 my-auto mt-3 comprar nav-link active text-white rounded-pill"  >Comprar</a>
