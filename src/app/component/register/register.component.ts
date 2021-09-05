@@ -5,7 +5,6 @@ import { Router } from "@angular/router";
 import { AlertasService } from "../../service/alertas/alertas.service";
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
-import { SocialUser } from "angularx-social-login";
 import { isPlatformBrowser, isPlatformServer} from "@angular/common";
 
 @Component({

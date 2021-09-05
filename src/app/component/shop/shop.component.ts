@@ -12,7 +12,6 @@ import {AutenticacionService} from "../../service/autenticacion/autenticacion.se
 export class ShopComponent implements OnInit {
   cantidadCompra = 1;
   route!: string;
-  gotero!: boolean;
   total = 30000;
   constructor(@Inject(PLATFORM_ID) private platformId: object,private tokenService: TokenService,private autenticationService: AutenticacionService) { }
 

@@ -10,7 +10,7 @@ import set = gsap.set;
   providedIn: 'root'
 })
 export class AutenticacionService {
-  URL = 'https://mincookir.herokuapp.com/auth/';
+  URL = 'https://minoxidilback.herokuapp.com/auth/';
 
 
   constructor(private client: HttpClient) { }
